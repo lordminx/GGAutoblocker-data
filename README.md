@@ -10,11 +10,13 @@ Alas, personal life prevented me from really analysing the data, so the project 
 
 But because I did spend quite a bit of time on the project and felt annoyed by the idea of it being all for waste, I'm trying to exctract and present as much useful data as possible from the dataset, publish it here and then finally make my peace with it.
 
-After all, publishing stuff counts as a ghost of done.
+After all, [publishing stuff counts as a ghost of done](http://www.manifestoproject.it/bre-pettis-and-kio-stark/)
+
 
 ## Methodology
 
-The data represents tweets collected from 11188 accounts and was collected over a couple of days in early february of 2015. With a newly created twitter account, I subscribed to the ["Good Game Autoblocker"](https://blog.randi.io/good-game-auto-blocker/) Blocktogether list curated by Randi Harper and let it add blocks to the account. Once that was done, I used the Twiter API to collect the accounts blocked ids.
+The data represents tweets collected from 11188 accounts and was collected over a couple of days in early february of 2015. With a newly created twitter account, I subscribed to the ["Good Game Autoblocker"](https://blog.randi.io/good-game-auto-blocker/) Blocktogether list curated by Randi Harper and let it add blocks to the account. (The blokclist itself is populated by accounts that follow two or more GG-centered twitter accounts.)   
+Once that was done, I used the Twiter API to collect the accounts blocked ids.
 
 For those ~11200 accounts, I now used Twitters API to collect as many tweets as possible. As the API only allows retrieval of the last 3000 or so tweets, that was the number the script aimed for, with some users obviously having less tweets than that.
 
@@ -40,7 +42,19 @@ Contains all the 11188 user ids extracted from the blocklist at data collection.
 
 The ids of the ~18*10^6 tweets collected, one line per ID. The text file was compressed using xz to be small enough for upload to Github.
 
+### wordcount.csv
 
+A count of words used in the text parts of the twitter corpus. This was very roughly chunked on whitespace, not stemmed at all and still includes shashtags, etc. Presented as a csv file with <word>, <count>.
+
+### mentionscount.csv
+
+File of twitter nicks and numbers of mentions for that nick in the corpus. Nicknames are presented without "@"-prefix and without normalizing cpatitalization, etc.
+
+### account_metadata.csv
+
+Anonymized, randomized metadata for the Twitter accounts in the dataset. Presented as a csv file with one account per line and the following data fields:
+
+created_at,followers,friends,statuses,language,protected,utc_offset
 
 
 
@@ -48,11 +62,6 @@ The ids of the ~18*10^6 tweets collected, one line per ID. The text file was com
 
 
 mention_graph.csv.xz
-sym_rt_graph.csv
-user-ids.txt
-mentionscount.csv
-tweet-ids.txt.xz
-wordcount.csv
 
 
-Account_metadata.csv: created_at/followers/friends/statuses/language/protected/utc_offset\n
+
