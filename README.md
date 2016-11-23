@@ -30,26 +30,6 @@ I hope that somebody out there might find some interest in this information.
 
 ## File Descriptions
 
-### sym_rt_graph.csv
-
-In this file, the symmetric RT relationships in the dataset where extracted and modelled as a social graph. Every line in the csv file represents an edge between two users in the dataset who have retweeted each other.
-
-### user_ids.txt
-
-Contains all the 11188 user ids extracted from the blocklist at data collection. For one method to hydrate the ids into full twitter user objects, see [this Jupyter Notebook](hydrate_twitter_ids.ipynb).
-
-### tweet_ids.txt.xz
-
-The ids of the ~18\*10^6 tweets collected, one line per ID. The text file was compressed using xz to be small enough for upload to Github.
-
-### wordcount.csv
-
-A count of words used in the text parts of the twitter corpus. This was very roughly chunked on whitespace, not stemmed at all and still includes hashtags, etc. Presented as a csv file with `word,count`.
-
-### mentionscount.csv
-
-File of twitter nicks and numbers of mentions for that nick in the corpus. Nicknames are presented without "@"-prefix and without normalizing cpatitalization, etc.
-
 ### account_metadata.csv
 
 Anonymized, randomized metadata for the Twitter accounts in the dataset. Presented as a csv file with one account per line and the following data fields:
@@ -58,11 +38,48 @@ Anonymized, randomized metadata for the Twitter accounts in the dataset. Present
 created_at,followers,friends,statuses,language,protected,utc_offset
 ```
 
+### hashtag_count.csv
+
+
+
 ### mention_graph.csv.xz
 
 A mention graph as a csv file, describing the mention relationships (ie. who mentions whom) in the dataset in the form of directional edges between Twitter user IDs. 
 
 The format of the csv file is `User ID,User ID,Number of Mentions`.
+
+### mentionscount.csv
+
+File of twitter nicks and numbers of mentions for that nick in the corpus. Nicknames are presented without "@"-prefix and without normalizing captitalization, etc.
+
+### sym_rt_graph.csv
+
+In this file, the symmetric RT relationships in the dataset where extracted and modelled as a social graph. Every line in the csv file represents an edge between two users in the dataset who have retweeted each other.
+
+### tweet_dates.csv.xz
+
+Twitter-formated date-time strings, one per line, for every tweet in the dataset. Compressed using xz to allow uploading to Github.
+
+### tweet_ids.txt.xz
+
+The ids of the ~18\*10^6 tweets collected, one line per ID. The text file was compressed using xz to be small enough for upload to Github.
+
+### url_count.csv.xz
+
+List of urls extracted from tweets in the dataset as well as a count of how often an url appears in the dataset. One url per line formatted as `url,count` and compressed using xz.
+
+### user_ids.txt
+
+Contains all the 11188 user ids extracted from the blocklist at data collection. For one method to hydrate the ids into full twitter user objects, see [this Jupyter Notebook](hydrate_twitter_ids.ipynb).
+
+### wordcount.csv
+
+A count of words used in the text parts of the twitter corpus. Very roughly chunked on whitespace, not stemmed at all and still includes hashtags, etc. Presented as a csv file with `word,count`.
+
+
+
+
+
 
 
 
