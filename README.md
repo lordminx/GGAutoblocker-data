@@ -56,12 +56,11 @@ Anonymized, randomized metadata for the Twitter accounts in the dataset. Present
 
 created_at,followers,friends,statuses,language,protected,utc_offset
 
+### mention_graph.csv.xz
 
+A mention graph as a csv file, describing the mention relationships (ie. who mentions whom) in the dataset in the form of directional edges between Twitter user IDs. 
 
-
-
-
-mention_graph.csv.xz
+The format of the csv file is "User ID,User ID,Number of Mentions".
 
 
 
