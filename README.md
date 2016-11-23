@@ -40,11 +40,11 @@ Contains all the 11188 user ids extracted from the blocklist at data collection.
 
 ### tweet_ids.txt.xz
 
-The ids of the ~18*10^6 tweets collected, one line per ID. The text file was compressed using xz to be small enough for upload to Github.
+The ids of the ~18\*10^6 tweets collected, one line per ID. The text file was compressed using xz to be small enough for upload to Github.
 
 ### wordcount.csv
 
-A count of words used in the text parts of the twitter corpus. This was very roughly chunked on whitespace, not stemmed at all and still includes shashtags, etc. Presented as a csv file with <word>, <count>.
+A count of words used in the text parts of the twitter corpus. This was very roughly chunked on whitespace, not stemmed at all and still includes hashtags, etc. Presented as a csv file with `word,count`.
 
 ### mentionscount.csv
 
@@ -54,13 +54,15 @@ File of twitter nicks and numbers of mentions for that nick in the corpus. Nickn
 
 Anonymized, randomized metadata for the Twitter accounts in the dataset. Presented as a csv file with one account per line and the following data fields:
 
+```
 created_at,followers,friends,statuses,language,protected,utc_offset
+```
 
 ### mention_graph.csv.xz
 
 A mention graph as a csv file, describing the mention relationships (ie. who mentions whom) in the dataset in the form of directional edges between Twitter user IDs. 
 
-The format of the csv file is "User ID,User ID,Number of Mentions".
+The format of the csv file is `User ID,User ID,Number of Mentions`.
 
 
 
